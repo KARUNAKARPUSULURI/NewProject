@@ -1,0 +1,31 @@
+.Container {
+    display: inline-flex;
+    justify-content: center;
+    width: 60%;
+    padding-top: 100px;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.container-left {
+    border-radius: 10px; /* Add border-radius to the left container */
+    overflow: hidden; /* Hide overflowing content within the rounded corners */
+}
+
+.container-right {
+    border-radius: 10px; /* Add border-radius to the right container */
+    overflow: hidden; /* Hide overflowing content within the rounded corners */
+}
+
+.leftside {
+    background-color: darkblue;
+    color: whitesmoke;
+    width: 50%;
+    padding: 100px;
+}
+
+.rightside {
+    width: 50%;
+    background-color: red;
+    padding: 100px;
+}
