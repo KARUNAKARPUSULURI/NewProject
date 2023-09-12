@@ -44,7 +44,7 @@ const SignUp = () => {
                             Community
                         </h1>
                         <p>Be inspired by Created by desinger around the global</p>
-                        <p>Already have an account?<Link to='/login' className="signup-btn">Login</Link></p>
+                        <p>Already have an account?<Link to='/' className="signup-btn">Login</Link></p>
                     </div>
                     <div className="lgright">
                         <h1>Register Here!</h1>
