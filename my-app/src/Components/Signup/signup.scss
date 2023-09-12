@@ -1,4 +1,4 @@
-.loginblock-wrapper {
+.registrationblock-wrapper {
     .login-container {
         display: flex;
         flex-direction: column;
@@ -74,14 +74,14 @@
         padding: 0px;
     }
 
-    .loginblock {
+    .registrationblock {
         margin: 0 auto;
         padding-top: 5%;
         height: 100vh;
         background: #e6eaf3;
     }
 
-    .loginmainblock {
+    .registrationmainblock {
         background: #fff;
         margin: 0 auto;
         width: 65%;
@@ -123,12 +123,12 @@
     .signup-btn {
         color: #00ff62;
         margin-left: 5px;
-
         &:hover {
-            color: #00ff62;
-            font-size: 18px;
-        }
+            color: #00ff62; 
+            font-size: 18px; 
+          }        
     }
+
 
     .lgright {
         width: 50%;
@@ -146,26 +146,26 @@
         margin-top: 50px;
     }
 
-    .loginmainblock h3 {
+    .registrationmainblock h3 {
         text-align: center;
         font-size: 20px;
         margin: 15px 0 25px 0;
         color: #4d80cd;
     }
 
-    .loginmainblock .ant-row {
+    .registrationmainblock .ant-row {
         display: flex;
         flex-flow: row wrap;
         flex-direction: row;
         margin: 0 0 10px 0;
     }
 
-    .loginmainblock .ant-input {
+    .registrationmainblock .ant-input {
         height: 40px;
         border-radius: 8px;
     }
 
-    .loginmainblock .ant-input-affix-wrapper {
+    .registrationmainblock .ant-input-affix-wrapper {
         height: 40px;
         border-radius: 8px;
     }
@@ -189,7 +189,7 @@
     }
 
     @media (max-width: 1200px) {
-        .loginmainblock {
+        .registrationmainblock {
             width: 90%;
         }
 
@@ -215,7 +215,7 @@
     }
 
     @media (max-width: 600px) {
-        .loginblock {
+        .registrationblock {
             margin: 0 auto;
             padding-top: 5%;
             height: 100%;
@@ -223,14 +223,13 @@
             padding-bottom: 5%;
         }
 
-        .loginmainblock {
+        .registrationmainblock {
             display: inline-block;
         }
 
         .lgright {
             width: auto;
             border-radius: 0;
-            height: auto;
         }
 
         .lgleft {
@@ -239,17 +238,16 @@
             padding: 30px 10px 10px 10px;
         }
 
-        .loginmainblock {
+        .registrationmainblock {
             width: auto;
             padding: 0px;
             margin: 0 16px;
         }
-
         .bntsubmit {
             font-size: 14px;
             width: 80px;
             margin-top: 20px;
-            margin-right: 100px
+            margin-right:100px
         }
     }
 }

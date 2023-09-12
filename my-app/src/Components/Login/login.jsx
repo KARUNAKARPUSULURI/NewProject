@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import './login.scss';
 import { Button, Checkbox, Form, Input, message } from 'antd';
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 
 const Login = () => {
+    const [errmsg, setErrMsg] = useState();
     const [loginForm] = Form.useForm();
     const navigate = useNavigate();
+    
     const onFinish = (values) => {
         console.log("values", values)
         const loginUrl = "https://snapkaro.com/eazyrooms_staging/api/userlogin";
@@ -22,56 +24,59 @@ const Login = () => {
                 message.success("Login successful")
             } else {
                 message.error("login failed")
+                setErrMsg(true)
             }
         }).catch((err) => {
             console.log("err", err)
         })
     }
+    
     const onFinishFailed = (error) => {
         console.log("error", error)
     }
+    
     return (
         <>
-            <div className="Container">
-                <div className="container-left">
-                    <div className="leftside">
-                        <h1>Welcome to our community</h1>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente, enim.</p>
+            <div className="loginblock-wrapper">
+                <div className="loginmainblock" >
+                    <div className="lgleft">
+                        <h1>
+                            Join our <br />
+                            Community
+                        </h1>
+                        <p>Be inspired by Created by designers around the globe</p>
+                        <p>Don't have an account?<Link to='/signup' className="signup-btn">SignUp</Link></p>
                     </div>
-                </div>
-                <div className="container-right">
-                    <div className="rightside">
+                    <div className="lgright">
+                        <h1>Login Here!</h1>
                         <Form
-                            name="loginForm"
+                            onFinish={onFinish}
                             form={loginForm}
+                            name="basic"
                             labelCol={{
                                 span: 8,
                             }}
                             wrapperCol={{
-                                span: 16,
-                            }}
-                            style={{
-                                maxWidth: 600,
+                                span: 24,
                             }}
                             initialValues={{
                                 remember: true,
                             }}
-                            onFinish={onFinish}
-                            onFinishFailed={onFinishFailed}
                             autoComplete="off"
                         >
                             <Form.Item
-                                label="Email"
+                                label="Username"
                                 name="user_email"
                                 rules={[
                                     {
                                         required: true,
-                                        message: 'Please input your email!',
+                                        message: "Please input your username!",
                                     },
                                 ]}
                             >
-                                <Input type="email" placeholder="Enter your email" />
+                                <Input placeholder="Enter your email"/>
                             </Form.Item>
+
                             <Form.Item
                                 label="password"
                                 name="user_password"
@@ -84,20 +89,28 @@ const Login = () => {
                             >
                                 <Input type="password" placeholder="Enter your password" />
                             </Form.Item>
+                            <span className="error-msg">
+                                <center>
+                                    <span style={{ color: "red" }}>
+                                        {errmsg ? "*Invalid credentials" : ""}
+                                    </span>
+                                </center>
+                            </span>
                             <Form.Item
                                 wrapperCol={{
-                                    offset: 8,
-                                    span: 16,
+                                    span: 24,
                                 }}
                             >
-                                <Button type="primary" htmlType="submit">
-                                    Submit
+                                <Button
+                                    type="primary"
+                                    className="bntsubmit"
+                                    htmlType="submit"
+                                    style={{marginTop:50}}
+                                >
+                                    Login
                                 </Button>
                             </Form.Item>
                         </Form>
-                        <div style={{ marginTop: 16, textAlign: 'center' }}>
-                            Don't have an account? <Link to="/signup">Sign up</Link>
-                        </div>
                     </div>
                 </div>
             </div>
